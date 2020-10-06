@@ -13,7 +13,11 @@ app.use(signupRouter);
 app.use(signinRouter);
 app.use(signoutRouter);
 
+app.get("/api/users/currentuser", (req, res) => {
+  res.send("working");
+});
+
 const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Listening on PORT ${PORT}!`);
+app.listen(3000, () => {
+  console.log(`Listening on PORT ${PORT}`);
 });
