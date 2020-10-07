@@ -14,6 +14,10 @@ app.use(signinRouter);
 app.use(signoutRouter);
 
 app.get("/api/users/currentuser", (req, res) => {
+  res.send("working alright");
+});
+
+app.get("/api/users/login", (req, res) => {
   res.send("working");
 });
 
