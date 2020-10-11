@@ -21,7 +21,11 @@ app.get("/api/users/login", (req, res) => {
   res.send("working");
 });
 
+app.get("/api/users/signup", (req, res) => {
+  res.send("working");
+});
+
 const PORT = 3000;
 app.listen(3000, () => {
-  console.log(`Listening on PORT ${PORT}`);
+  console.log(`Listening on PORT ${PORT}!!!`);
 });
