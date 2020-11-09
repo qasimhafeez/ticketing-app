@@ -14,7 +14,7 @@ app.use(signinRouter);
 app.use(signoutRouter);
 
 app.get("/api/users/currentuser", (req, res) => {
-  res.send("working alright");
+  res.json("working alright");
 });
 
 app.get("/api/users/login", (req, res) => {
@@ -27,5 +27,5 @@ app.get("/api/users/signup", (req, res) => {
 
 const PORT = 3000;
 app.listen(3000, () => {
-  console.log(`Listening on PORT ${PORT}`);
+  console.log(`Listening on PORT ${PORT}!`);
 });
