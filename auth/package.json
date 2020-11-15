@@ -7,6 +7,14 @@
     "start": "ts-node-dev src/index.ts",
     "test": "jest --watchAll --no-cache"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./src/test/setup.ts"
+    ]
+  },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
