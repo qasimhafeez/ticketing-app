@@ -15,6 +15,7 @@ spec:
       containers:
         - name: client
           image: qasimh/client
+
 ---
 apiVersion: v1
 kind: Service
@@ -23,8 +24,8 @@ metadata:
 spec:
   selector:
     app: client
-    ports:
-      - name: client
-        protocol: TCP
-        port: 3000
-        targetPort: 3000
+  ports:
+    - name: client
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
