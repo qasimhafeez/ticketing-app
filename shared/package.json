@@ -2,9 +2,14 @@
   "name": "@qh-tickets/shared",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
-    "build": "tsc"
+    "clean": "del build",
+    "build": "npm run clean && tsc"
   },
   "keywords": [],
   "author": "",
