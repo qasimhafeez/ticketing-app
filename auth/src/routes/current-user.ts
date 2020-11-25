@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 // Importing middleware
-import { currentUser } from "../middleware/current-user";
+import { currentUser } from "@qh-tickets/shared";
 const router = express();
 
 router.get(

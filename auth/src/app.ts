@@ -8,8 +8,7 @@ import { signupRouter } from "./routes/signup";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 // Handling Errors
-import { errorHandler } from "./middleware/error-handler";
-import { NotFoundError } from "./errors/not-found-error";
+import { errorHandler, NotFoundError } from "@qh-tickets/shared";
 
 const app = express();
 app.set("trust proxy", true);
