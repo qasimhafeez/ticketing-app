@@ -10,13 +10,17 @@ spec:
     - host: tickets.dev
       http:
         paths:
-          - path: /api/users/?(.*)
+          - path: /api/orders/?(.*)
             backend:
-              serviceName: auth-srv
+              serviceName: orders-srv
               servicePort: 3000
           - path: /api/tickets/?(.*)
             backend:
               serviceName: tickets-srv
+              servicePort: 3000
+          - path: /api/orders/?(.*)
+            backend:
+              serviceName: orders-srv
               servicePort: 3000
           - path: /?(.*)
             backend:
