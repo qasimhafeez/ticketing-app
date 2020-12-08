@@ -10,9 +10,9 @@ spec:
     - host: tickets.dev
       http:
         paths:
-          - path: /api/orders/?(.*)
+          - path: /api/users/?(.*)
             backend:
-              serviceName: orders-srv
+              serviceName: auth-srv
               servicePort: 3000
           - path: /api/tickets/?(.*)
             backend:
