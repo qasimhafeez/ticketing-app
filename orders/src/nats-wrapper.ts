@@ -27,7 +27,7 @@ class NatsWrapper {
       this.client.close();
     });
 
-    return new Promise((resolve, reject): void => {
+    return new Promise((resolve, reject) => {
       this.client.on("connect", () => {
         console.log("Connected to NATS");
         resolve();
