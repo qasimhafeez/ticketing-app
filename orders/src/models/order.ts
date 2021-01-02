@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { OrderStatus } from "@qh-tickets/shared";
 import { TicketDoc } from "./ticket";
+
 interface OrderAttrs {
   userId: string;
   status: OrderStatus;
