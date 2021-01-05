@@ -14,7 +14,7 @@ const buildTicket = async () => {
   return ticket;
 };
 
-it("fetches order of a particular user", async () => {
+it("fetches order of a particular use r", async () => {
   // create 3 tickets and save them to db
   const ticketOne = await buildTicket();
   const ticketTwo = await buildTicket();
@@ -31,13 +31,13 @@ it("fetches order of a particular user", async () => {
     .expect(201);
 
   // create 2 orders as user#2
-  await request(app)
+  const { body: orderOne } = await request(app)
     .post("/api/orders")
     .set("Cookie", userTwo)
     .send({ ticketId: ticketTwo.id })
     .expect(201);
 
-  await request(app)
+  const { body: orderTwo } = await request(app)
     .post("/api/orders")
     .set("Cookie", userTwo)
     .send({ ticketId: ticketThree.id })
@@ -51,5 +51,9 @@ it("fetches order of a particular user", async () => {
 
   // make sure we only get orders for user#2
   console.log(response.body);
-  // expect(response.body.length).toEqual(2);
+  expect(response.body.length).toEqual(2);
+  expect(response.body[0].id).toEqual(orderOne.id);
+  expect(response.body[1].id).toEqual(orderTwo.id);
+  expect(response.body[0].ticket.id).toEqual(ticketTwo.id);
+  expect(response.body[1].ticket.id).toEqual(ticketThree.id);
 });
