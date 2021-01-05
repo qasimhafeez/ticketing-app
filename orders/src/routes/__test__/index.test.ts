@@ -1,5 +1,4 @@
 import request from "supertest";
-import { isConstructorDeclaration } from "typescript";
 import { app } from "../../app";
 import { Order } from "../../models/order";
 import { Ticket } from "../../models/ticket";
